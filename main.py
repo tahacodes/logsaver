@@ -15,14 +15,9 @@ except:
 
 @app.route('/', methods=['GET'])
 def get():
-    cursor = db.logs.find({})
-    logs = []
-    for document in cursor:
-        logs.append(document)
-    return Response(
-        response={f"{logs}"},
-        status=200,
-        mimetype="application/json")
+    total = db.logs.count_documents({})
+    successful = db.logs.count_documents({"status": "200"})
+    return "tatal requests: {}\nfailed requests: {}\n".format(total, total - successful)
 
 @app.route('/', methods=['POST'])
 def post():
