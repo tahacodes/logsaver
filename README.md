@@ -8,7 +8,8 @@ development: <br>
     pip install flask # a microservice web framework<br>
     pip install pymongo # mongodb driver
 
-how to use:<br>
+# how to use:<br>
+    
     save your logs on the client like this (as a text file):<br>
         "status,timestamp,response"<br>
     some examples are provided in 'sample-logs' file.
