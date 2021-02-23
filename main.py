@@ -15,8 +15,14 @@ except:
 
 @app.route('/', methods=['GET'])
 def get():
-    db.logs
-
+    cursor = db.logs.find({})
+    logs = []
+    for document in cursor:
+        logs.append(document)
+    return Response(
+        response={f"{logs}"},
+        status=200,
+        mimetype="application/json")
 
 @app.route('/', methods=['POST'])
 def post():
