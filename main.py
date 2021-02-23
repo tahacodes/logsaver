@@ -1,12 +1,13 @@
-from flask import Flask
+from flask import Flask, Response, request
 import pymongo
+import json
 
 app = Flask(__name__)
 
 try:
     mongo = pymongo.MongoClient(
         host="localhost", port=27017, serverSelectionTimeoutMS=1000)
-    db = mongo.demo
+    db = mongo.logs_database
     mongo.server_info()
 except:
     print("Couldn't connect to MongoDB")
@@ -14,23 +15,30 @@ except:
 
 @app.route('/', methods=['GET'])
 def get():
-    return
+    db.logs
 
 
 @app.route('/', methods=['POST'])
 def post():
-    try:
-        log = {
-            "status": 200,
-            "timestamp": 1614033055,
-            "output": "CREATED"
+    data = request.files['file'].read().decode('ascii')
+    final = []
+    for line in data.splitlines():
+        data = line.split(",")
+        jsondata = {
+            "status": data[0],
+            "timestamp": data[1],
+            "response": data[2],
         }
-        dbResponse = db.logs.insert_one(log)
-        for attr in dir(dbResponse):
-            print(attr)
-    except Exception as ex:
-        print(ex)
+        final.append(jsondata)
+
+    dbResponse = db.logs.insert_many(final)
+    print(dbResponse.inserted_ids)
+
+    return Response(
+        response=json.dumps({"message": "saved"}),
+        status=200,
+        mimetype="application/json")
 
 
 if __name__ == '__main__':
-    app.run(port=8080, debug=False)
+    app.run(port=8080, debug=True)
