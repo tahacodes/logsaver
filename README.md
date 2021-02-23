@@ -5,12 +5,11 @@ using flask, and mongodb
 <hr />
 <br>
 
-# development: <br>
+# development: 
     pip install flask # a microservice web framework<br>
     pip install pymongo # mongodb driver
 
-# how to use:<br>
-    
+# how to use:
     save your logs on the client like this (as a text file):<br>
         "status,timestamp,response"<br>
     some examples are provided in 'sample-logs' file.
