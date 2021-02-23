@@ -1,10 +1,10 @@
 # logsaver-api
 
-using flask, and mariadb
+using flask, and mongodb
 <br>
 <hr />
 <br>
-development: <br>
+# development: <br>
     pip install flask # a microservice web framework<br>
     pip install pymongo # mongodb driver
 
