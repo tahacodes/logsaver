@@ -1,4 +1,4 @@
-from logsaver-api import app
+from logsaver import app
 
 if __name__ == "__main__":
     app.run()
