@@ -13,13 +13,13 @@ except:
     print("Couldn't connect to MongoDB")
 
 
-@app.route('/', methods=['GET'])
+@app.route('/logsaver', methods=['GET'])
 def get():
     total = db.logs.count_documents({})
     successful = db.logs.count_documents({"status": "200"})
     return "tatal requests: {}\nfailed requests: {}\n".format(total, total - successful)
 
-@app.route('/', methods=['POST'])
+@app.route('/logsaver', methods=['POST'])
 def post():
     data = request.files['file'].read().decode('ascii')
     final = []
