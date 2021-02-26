@@ -4,7 +4,7 @@ using flask, and mongodb
 <br>
 
 # development: 
-    pip install flask # a microservice web framework<br>
+    pip install flask # a microservice web framework
     pip install pymongo # mongodb driver
 
 # how to use:
