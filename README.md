@@ -10,8 +10,8 @@ using flask, and mongodb
     pip install pymongo # mongodb driver
 
 # how to use:
-    save your logs on the client like this (as a text file):<br>
-        "status,timestamp,response"<br>
+    save your logs on the client like this (as a text file):
+        "(OK|ERR),timestamp,response"
     some examples are provided in 'sample-logs' file.
 
     now you can POST this file:
