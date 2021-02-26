@@ -1,4 +1,4 @@
-200,1614085268,OK
-404,1614085267,Not Found
-200,1614085268,OK
-418,1614085269,I'm a teapot
+OK,1614337954,HTTP/1.1 200 OK Server: nginx/1.18.0 (Ubuntu) Date: Fri 26 Feb 2021 11:12:34 GMT Content-Type: application/octet-stream Content-Length: 12 Connection: keep-alive Content-Type: text/plain
+ERR,1614337955,HTTP/1.1 418 Server: nginx/1.18.0 (Ubuntu) Date: Fri 26 Feb 2021 11:12:35 GMT Content-Type: application/octet-stream Content-Length: 12 Connection: keep-alive
+OK,1614337957,HTTP/1.1 200 OK Server: nginx/1.18.0 (Ubuntu) Date: Fri 26 Feb 2021 11:12:37 GMT Content-Type: application/octet-stream Content-Length: 12 Connection: keep-alive Content-Type: text/plain
+OK,1614337958,HTTP/1.1 200 OK Server: nginx/1.18.0 (Ubuntu) Date: Fri 26 Feb 2021 11:12:38 GMT Content-Type: application/octet-stream Content-Length: 12 Connection: keep-alive Content-Type: text/plain
