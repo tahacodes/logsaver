@@ -16,8 +16,9 @@ except:
 @app.route('/logsaver', methods=['GET'])
 def get():
     total = db.logs.count_documents({})
-    successful = db.logs.count_documents({"status": "200"})
+    successful = db.logs.count_documents({"status": "OK"})
     return "total requests: {}\nfailed requests: {}\n".format(total, total - successful)
+
 
 @app.route('/logsaver', methods=['POST'])
 def post():
@@ -35,10 +36,7 @@ def post():
     dbResponse = db.logs.insert_many(final)
     print(dbResponse.inserted_ids)
 
-    return Response(
-        response=json.dumps({"message": "saved"}),
-        status=200,
-        mimetype="application/json")
+    return "saved"
 
 
 if __name__ == '__main__':
